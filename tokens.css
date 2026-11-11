@@ -1,0 +1,40 @@
+/* Clarity locked brand tokens. Paper #F4F7FB; navy #0A172A. */
+:root {
+  color-scheme: light;
+  --color-paper: #F4F7FB;
+  --color-surface: #FFFFFF;
+  --color-navy: #0A172A;
+  --color-deep: #07101F;
+  --color-ink: #0F172A;
+  --color-muted: #475569;
+  --color-rule: #D6DFEA;
+  --color-boundary: #64748B;
+  --color-accent: #2563EB;
+  --color-accent-ink: #FFFFFF;
+  --color-focus: #C2410C;
+  --color-error: #9F1239;
+  --color-success: #11643A;
+  --color-dark-muted: #BFCDE0;
+  --color-dark-rule: #34445B;
+  --color-clear: transparent;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: var(--font-display);
+  --space-xs: .5rem;
+  --space-sm: .75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --text-sm: .9375rem;
+  --text-base: 1rem;
+  --text-lead: 1.25rem;
+  --text-heading: clamp(1.75rem, 3vw, 2.75rem);
+  --text-display: clamp(2.5rem, 4.8vw + 1rem, 4.75rem);
+  --radius-control: .625rem;
+  --radius-panel: 1rem;
+  --rule-thin: 1px;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-micro: 120ms;
+}

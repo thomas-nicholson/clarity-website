@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /clarity-website/
+Sitemap: https://teejay.dev/clarity-website/sitemap.xml

@@ -1,0 +1,8 @@
+{
+  "font": "system sans-serif; locked brand",
+  "palette": "F4F7FB / 0A172A",
+  "reference": "Clarity browser extension DESIGN.md, Visual system (locked)",
+  "framework": "vanilla HTML, CSS, JS",
+  "motion": "press feedback only; reduced motion supported",
+  "scope": "new promotional website only"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "clarity-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Clarity promotional website; Playwright is test-only.",
+  "scripts": { "test": "node tests/browser.cjs" },
+  "devDependencies": { "playwright": "1.64.1" }
+}
