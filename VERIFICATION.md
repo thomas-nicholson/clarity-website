@@ -1,26 +1,31 @@
-# Local verification
+# Clarity website verification
 
-Final local browser suite: **48 checks passed** in Chromium 148.0.7778.96. No uncaught browser JavaScript errors. Firefox was **not run**: no installed/cached Playwright Firefox binary was present; no download was attempted.
+## Published website
 
-- Home and iPhone pages: real CSS viewports 320, 375, 414, 768 and 1440 px; additional 375 px at 200% root text. Verified no document horizontal overflow, visible headings/controls within the viewport, loaded images, and measured primary control/label targets at least 44 × 44 px.
-- Privacy, support and 404: document overflow checked at 320, 375, 414 and 768 px. Routes, internal links, canonical/description/OG metadata and static SEO assets checked. A nested 404 served the branded page and its real Home link worked.
-- Real browser navigation from the home iPhone CTA; exact Google Play href; truly disabled Chrome/Firefox controls.
-- Accessible email/consent errors; missing/invalid config prevented requests and success; no-JavaScript fallback; keyboard skip link and reduced-motion behavior.
-- **Task-owned scripted HTTP fixtures, not a production backend:** exact JSON payload, honeypot preservation, delayed submitting state, duplicate-tap lock, accepted and already-registered acknowledgements, no email echo/browser storage, HTTP 400/429/500/201, malformed/negative JSON, broken connection, denied CORS and a response-body timeout. Success only followed HTTP 200 + `accepted: true`.
-- Computed token contrast checks: ink/paper 16.61:1; muted/paper 7.05:1; light/navy 16.72:1; dark-muted/navy 11.14:1; link/paper 4.81:1; focus/paper 4.82:1; focus/navy 3.47:1; error/surface 8.02:1; success/surface 7.22:1; field boundary/surface 4.76:1.
+**Live:** https://teejay.dev/clarity-website/ — GitHub Pages, HTTPS enforced, source `main:/` in public `thomas-nicholson/clarity-website`.
 
-Actual browser PNGs and JSON results/source inventory are stored outside this public source tree. Rerun the documented test command to create your own evidence directory. Final evidence is local, not hosted acceptance or device blocking acceptance.
+Executable website source: `c5fc3ec1f6afeac9a38dc9c1dc699c73cbc5bd64`. GitHub Pages build/deployment `43077203669` completed successfully for that exact commit. Parent verified all 25 remote source blobs against the local Git tree and all 15 deployed runtime HTML/CSS/JS/image/SEO files byte-for-byte over HTTPS. Later documentation-only recording commits do not change this executable source.
+
+A real browser opened the live homepage, verified both exact Google Play links and disabled Chrome/Firefox controls, then clicked the iPhone CTA into the actual hosted form. Two genuine form submissions using one controlled reserved-domain address both showed accepted status. Private database readback verified exactly one durable row, consent/source and 365-day retention, private0700/0600 modes and the installed backend source hash. The controlled entry was specifically removed and absence read back. No address/nonce appeared in scoped service journals; no mail was sent. No real subscriber rows were read or exported for this test.
+
+## Local browser qualification
+
+**48 checks passed**, Chromium 148.0.7778.96; no uncaught browser JavaScript errors.16 actual screenshot artifacts were retained privately outside public source. Firefox was **not run**: no cached Playwright Firefox executable. Safari/physical-device qualification remains open.
+
+- Home/iPhone viewports 320/375/414/768/1440 CSS pixels, plus 375px at 200% root text: no horizontal overflow/clipped tested controls, images loaded, measured primary control/label hit targets at least 44×44px.
+- Privacy/support/404 overflow at 320/375/414/768; internal links, metadata and SEO assets; nested404 home navigation.
+- Correct Play href and real iPhone navigation; genuinely disabled coming-soon extension controls.
+- Required email/consent validation, missing/invalid configuration refuses dispatch, no-JS native submission disabled, keyboard skip link and reduced motion.
+- Owned scripted HTTP fixtures, **not production-backend evidence**: captured exact payload, honeypot, pending/duplicate lock, acceptance/retry,400/429/500/201, malformed/negative JSON, connection/CORS/body-timeout failures, no browser-storage signup or automatic retry.
+- Parent reproduced an editable-email-during-pending defect, then fixed it: email/consent are locked to the submitted request and restored on failure. The full 48-check suite passed after the repair. Finished forms do not validate cleared disabled fields as a new error.
+- Production waitlist CSP allows only the real HTTPS API. Only the local test fixture server substitutes its own loopback transport policy; this is not deployed.
+
+## Backend and privacy boundaries
+
+The separate privately operated API passed 18 real HTTP/SQLite tests, including restart durability, deduplication, limits and origin/lookalike checks. Its source/state is not published here. Public form validation does not verify mailbox ownership. Confirmation/launch-mail delivery, campaign operations and real inbox handling were not exercised. Retention cleanup is scheduled/bounded, not guaranteed at an exact second; outages/backlogs can delay removal. Existing Android privacy URLs are preserved.
 
 ## Design review
 
-Hallmark Workbench + N9/Ft2, with Clarity’s locked palette/system type; no invented proof or re-drawn chrome. Inspected actual desktop/mobile/tablet, form success and enlarged-text captures. Shortened FAQ controls, adjusted enlarged heading wrapping and repaired a skip-link sliver exposed at enlarged text. Layout uses semantic HTML, hairlines and whitespace rather than decorative effects. Brand-specific system typography/exact white/hex tokens are documented exceptions to Hallmark catalog preferences; no claim of passing every generic catalog gate is made.
+Actual desktop/mobile/tablet/enlarged-text renders were inspected. Clarity's locked system typography/palette, restrained spacing, real owned native Android View renders with demo content, no fake phone/browser chrome, fabricated proof or false store availability. Brand tokens intentionally override generic Hallmark catalog preferences; this is not a claim of passing every generic style gate.
 
-## Remaining launch gates
-
-- Real private waitlist service, correct CORS and idempotent/deduplicated acceptance.
-- Actual provider/retention/deletion information in website privacy; working support/removal process.
-- Public API base in `assets/config.js`, then real hosted form verification.
-- GitHub repository/Pages publication and readback, including intended canonical/subpath and custom 404.
-- Firefox/Safari/device-browser smoke if required for the release matrix.
-
-No GitHub repository, provider/backend, account, payment, Android release or extension modification was created by this site task.
+Evidence is retained privately under the website-and-sync research directory and task-owned screenshot directories. Local fixture results, hosted signup verification, Android blocking, browser-extension blocking and signed/store distribution are distinct acceptance categories. This website publication does not release iPhone, enable cross-device Sync or submit either browser extension.

@@ -27,4 +27,4 @@ The existing Android policy URL `https://teejay.dev/clarity-privacy/` is preserv
 
 ## Verification boundaries
 
-Browser screenshots/test results are produced outside this public source tree. Form-success tests use explicitly scripted, task-owned local HTTP server fixtures; they are **not** evidence of a real waitlist provider. Production backend integration, collection-policy completion, GitHub Pages deployment and hosted verification remain separate gates.
+Browser screenshots/test results are produced outside this public source tree. Form-success tests use explicitly scripted, task-owned local HTTP server fixtures; they are **not** evidence of a real waitlist provider. Those gates were subsequently completed by the parent: see `VERIFICATION.md` for the actual hosted form, private readback and exact-source deployment evidence. Local fixture results remain a separate evidence category.

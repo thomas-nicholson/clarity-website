@@ -22,9 +22,9 @@ The client appends `/v1/waitlist` and explicitly submits JSON:
 {"email":"you@example.com","source":"iphone","consent":true,"website":""}
 ```
 
-Only HTTP200 with `{"accepted":true}` confirms acceptance. New and existing addresses receive the same response without an address. SQLite commit precedes acceptance; retrying does not duplicate or extend retention. No confirmation email is sent. The backend permits only the exact owned GitHub/custom origins, validates consent/honeypot/schema, rate-limits requests and stores private records with scheduled365-day cleanup. Removal is available through the published support contact and private operator CLI. The privacy page describes actual behavior, including delayed cleanup after outages/backlogs.
+Only HTTP 200 with `{"accepted":true}` confirms acceptance. New and existing addresses receive the same response without an address. SQLite commit precedes acceptance; retrying does not duplicate or extend retention. No confirmation email is sent. The backend permits only the exact owned GitHub/custom origins, validates consent/honeypot/schema, rate-limits requests and stores private records with scheduled 365-day cleanup. Removal is available through the published support contact and private operator CLI. The privacy page describes actual behavior, including delayed cleanup after outages/backlogs.
 
-The form sends no cookies/credentials, rejects redirects, bounds the request/body deadline to12 seconds, locks duplicate taps, does not save addresses in browser storage and never auto-retries. Native submission stays disabled until JavaScript initializes. Missing config and ambiguous failures never claim a saved signup. Production HTML permits connections only to the actual API; other pages permit no fetch connections.
+The form sends no cookies/credentials, rejects redirects, bounds the request/body deadline to 12 seconds, locks duplicate taps, does not save addresses in browser storage and never auto-retries. Native submission stays disabled until JavaScript initializes. Missing config and ambiguous failures never claim a saved signup. Production HTML permits connections only to the actual API; other pages permit no fetch connections.
 
 ## Local preview and tests
 
@@ -40,7 +40,7 @@ EVIDENCE_DIR=../clarity-website-evidence node tests/browser.cjs
 
 The harness starts actual owned HTTP servers for the static site and scripted API fixtures. Only that fixture server substitutes the loopback API config and relaxes the waitlist page's connection policy to its own ephemeral API port. Production files retain the exact HTTPS allowlist. These are UI/HTTP-fixture tests, not live-backend proof. The separately recorded hosted-form journey must prove production integration.
 
-Checks cover320/375/414/768/1440 CSS pixels,200% text, real links, metadata, invalid inputs/consent, in-flight lock, exact payload, success/retry, HTTP/network/CORS/body-timeout failures, disabled extensions, no-JS guidance and keyboard/reduced-motion behavior. Firefox absence is reported, never counted as a pass. JSON results/screenshots stay outside the public source tree.
+Checks cover 320/375/414/768/1440 CSS pixels, 200% text, real links, metadata, invalid inputs/consent, in-flight lock, exact payload, success/retry, HTTP/network/CORS/body-timeout failures, disabled extensions, no-JS guidance and keyboard/reduced-motion behavior. Firefox absence is reported, never counted as a pass. JSON results/screenshots stay outside the public source tree.
 
 ## Assets and availability
 
