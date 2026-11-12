@@ -10,7 +10,7 @@ Static promotional site at **https://teejay.dev/clarity-website/**, published fr
 - `/clarity-website/support/`: existing public support contact.
 - Nested missing routes use `404.html` and project-prefixed assets.
 
-Metadata, Open Graph assets and sitemap use the actual inherited custom-domain origin `https://teejay.dev`. Do not add a project CNAME or change the user-site domain. `.nojekyll` disables Jekyll processing. Project `robots.txt` is not the host-root robots policy.
+Metadata, Open Graph assets and sitemap currently use the inherited custom-domain origin `https://teejay.dev`. This repository deploys independently of the native app and browser extension. A separate product domain is planned; do not change the existing user-site domain or guess a project CNAME before the owner supplies the hostname. See [independent deployment and domain cutover](DEPLOYMENT.md). `.nojekyll` disables Jekyll processing. Project `robots.txt` is not the host-root robots policy.
 
 ## Private waitlist integration
 
@@ -30,13 +30,15 @@ The form sends no cookies/credentials, rejects redirects, bounds the request/bod
 
 From the parent directory run `python3 -m http.server 8080 --bind 127.0.0.1`, then open `http://127.0.0.1:8080/clarity-website/`. This is a layout preview: the production API intentionally denies arbitrary localhost origins.
 
-Playwright is development-only. Reuse an installed package/browser where possible:
+Playwright is development-only. This repository has its own package and lockfile; no sibling checkout is required:
 
 ```sh
-PLAYWRIGHT_MODULE=/home/hermes/workspace/clarity-extension/node_modules/playwright \
-CHROMIUM_EXECUTABLE=/usr/bin/google-chrome \
-EVIDENCE_DIR=../clarity-website-evidence node tests/browser.cjs
+npm ci
+npx playwright install chromium
+EVIDENCE_DIR=../clarity-website-evidence npm test
 ```
+
+Optional `PLAYWRIGHT_MODULE` and `CHROMIUM_EXECUTABLE` overrides may reuse an existing package/browser without creating a production dependency.
 
 The harness starts actual owned HTTP servers for the static site and scripted API fixtures. Only that fixture server substitutes the loopback API config and relaxes the waitlist page's connection policy to its own ephemeral API port. Production files retain the exact HTTPS allowlist. These are UI/HTTP-fixture tests, not live-backend proof. The separately recorded hosted-form journey must prove production integration.
 
