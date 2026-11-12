@@ -2,6 +2,10 @@
 
 Static promotional site at **https://teejay.dev/clarity-website/**, published from the public `thomas-nicholson/clarity-website` GitHub Pages project. No runtime framework, analytics, advertising trackers, cookies, external fonts or payments. The existing Android privacy site is separate and preserved.
 
+## Release focus
+
+**V1 — Public Release:** this independently deployed promotional site supports the current Android release and the existing iPhone waiting list. Review current routes, readability, support/privacy and signup behaviour without advertising unbuilt features. Marketing campaigns are a later V1.0.1 milestone; browser/Plus and iOS releases are later work. This documentation does not activate campaigns, analytics, checkout or new domains.
+
 ## Public routes
 
 - `/clarity-website/`: Android promotion and verified Google Play link, iPhone waitlist link, disabled Chrome/Firefox coming-soon locations.
