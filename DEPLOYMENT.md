@@ -17,6 +17,8 @@ The new product domain has not yet been supplied. Do not invent a hostname, purc
 
 The site source is standalone now, but its absolute metadata and error-page links still intentionally use the current project address. A new domain requires the explicit migration below; it is not already configured.
 
+Choose the deployment host separately from the Git repository. Before adding a commercial checkout/account portal, account for GitHub Pages' published restrictions on sites primarily facilitating commercial transactions or commercial SaaS. This is a future-hosting caveat, not a finding that the current free project-promotion page violates the policy.[6]
+
 ## Cutover once the owner supplies the domain
 
 1. Confirm the exact canonical hostname, who controls its DNS, and the intended static host. Retain the current live site while preparing the replacement.
@@ -48,3 +50,4 @@ Repository/deployment observations above were read back from the actual checkout
 ## Sources
 
 [1] https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+[6] https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
